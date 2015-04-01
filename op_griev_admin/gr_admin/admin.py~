@@ -1,0 +1,14 @@
+from django.contrib import admin
+from gr_admin.models import Officer, GrievanceRedressed, GrievanceRegistration
+from gr_admin.models import Client, Organisation, Users
+
+admin.site.register(Officer)
+class GrievanceRegistrationAdmin(admin.ModelAdmin):
+	readonly_fields = ("GR_DATE",)
+admin.site.register(GrievanceRegistration, GrievanceRegistrationAdmin)
+class GrievanceRedressedAdmin(admin.ModelAdmin):
+	readonly_fields = ("RG_DATE",)
+admin.site.register(GrievanceRedressed)
+admin.site.register(Client)
+admin.site.register(Organisation)
+admin.site.register(Users)
